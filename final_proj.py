@@ -89,6 +89,7 @@ while True:
     try:
         print("You may select the infection and recovery rates:")
         print("The values must both be between 0 and 1")
+        print("beta must be greater than gamma")
         print("*if not the default values will be set*")
         print("|Default is:         |")
         print("|beta [1/days] = 0.3 |")
@@ -101,6 +102,9 @@ while True:
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
     # beta is the rate of infection, [1/days]
     # gamma is the rate of recovery, [1/days]
+if beta < gamma:
+    beta = 0.3
+    gamma = 0.1
 if beta < 0 or beta > 1:
     beta = 0.3
 if gamma < 0 or gamma > 1:
